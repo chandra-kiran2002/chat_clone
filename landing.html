@@ -1,0 +1,307 @@
+  <html>
+   <head> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        #scroll::-webkit-scrollbar {
+        display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        #scroll {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        }
+        #chat::-webkit-scrollbar {
+        display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        #chat {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        #scroll button{
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        margin-top: 20px;
+        }
+        #scroll button:active {
+        outline: none;
+        border: none;
+        }
+        #scroll button:focus {outline:0;}
+        #scroll {
+            height: 87vh;
+        overflow: scroll;
+       
+        }
+        /* html, body {
+        height: 100%;
+        } */
+
+        /* .full-height {
+        height: 100%;
+        } */
+        #from{
+            margin: 5px;
+            padding: 10px;
+            /* position: absolute; */
+            max-width:300px;
+            
+            /* margin-right: 10px; */
+            background-color: #E8A87C;
+            border-radius: 10px;
+        
+        }
+        .abc{
+             display: flex;
+            justify-content: end;
+        }
+        .ab{
+             display: flex;
+            justify-content: start;
+        }
+        #chat{
+            height: 80vh;
+        overflow: scroll;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <div class="container bg-light">
+            <div class="row">
+                <div class="col-lg-4">
+                    <table style="width: 100%;background-color: #85DC;border-radius: 10px;">
+                        <tr>
+                            <td><img style="height: 60px;width:60px;border-radius:50%;margin: 7px;" src="man-profile-cartoon-vector-19491811.jpg"/></td>
+                            <td> <h2><strong id="username">hi kiran</strong></h2></td>
+                        </tr>
+                    </table>
+                    <!-- <h2><strong>Chats</strong></h2> -->
+                    <div id="scroll">
+                                               
+                        </div>
+                    </div>
+                    
+                <div class="col-lg-8">
+                    <table style="width: 100%;background-color: #85DC;border-radius: 10px;">
+                        <tr>
+                            <td><img style="height: 60px;width:60px;border-radius:50%;margin: 7px;" src="man-profile-cartoon-vector-19491811.jpg"/></td>
+                            <td> <h2 ><strong id="toname">hi kiran</strong></h2></td>
+                        </tr>
+                    </table>
+                    <div id="chat">
+                        <div class="abc" >
+                        <p id="from">hii kiran </p>
+                        </div>
+                        
+                        <div class="abc" >
+                            <p id="from">how r u? </p>
+                        </div>
+                        <div class="ab">
+                            <p id="from">fine</p>
+                        </div>
+                        <div class="abc" >
+                            <p id="from">what about u</p>
+                        </div>
+                        <div class="ab">
+                            <p id="from">good</p>
+                        </div>
+                        <div class="abc" >
+                            <p id="from">what about u</p>
+                        </div>
+                        <div class="ab">
+                            <p id="from">good</p>
+                        </div>
+                        <div class="abc" >
+                            <p id="from">what about u</p>
+                        </div>
+                        <div class="ab">
+                            <p id="from">good</p>
+                        </div>
+                        <div class="abc" >
+                            <p id="from">what about u</p>
+                        </div>
+                        <div class="ab">
+                            <p id="from">good</p>
+                        </div>
+                        <div class="abc" >
+                            <p id="from">what about u</p>
+                        </div>
+                        <div class="ab">
+                            <p id="from">good</p>
+                        </div>
+                    </div>
+                    <input id="messagevalue" class="user-input " style="width: 95%;height:30px;border-width: 3px;" id="userInput" />
+                    <button onclick="send()" style="height: 30px" class="send-msg-btn" id="sendMsgBtn">
+                     <i class="fas fa-paper-plane"></i>
+                     </button>
+              </div>
+        </div>
+     <script>
+        var chat=[1,2,3,4,5,6,7,8,9,10]
+        var currentTo=null;
+        var from=14
+        window.onload = function exampleFunction() {
+                var x =document.cookie.split(";")[0].split("=")[1].split(" ")
+                from=x[1]
+                document.getElementById("username").innerHTML="hi "+x[0]
+                update()
+            }
+            window.onbeforeunload = function () {
+            alert("fgsdgs")
+            }
+            function everyTime() {
+                // console.log('each 1 second...');
+                if(from!=null)
+                update()
+                if(currentTo!=null)
+                updatechat(0)
+                
+            }
+
+            var myInterval = setInterval(everyTime, 500);
+            
+        function send(){
+            var message=document.getElementById("messagevalue").value
+            document.getElementById("messagevalue").value=""
+            if(message!=""){
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                "from": from,
+                "to": currentTo,
+                "message":message
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                mode:'cors',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("http://localhost:8081/uploadmessage", requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                    console.log(result)
+                    updatechat(1)
+                    
+                    
+                })
+                .catch(error => console.log('error', error));
+            }
+        }
+        function update(){
+                if(from!=null){
+                    var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                "from": from
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                mode:'cors',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("http://localhost:8081/getprofiles", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)   
+                    var scrollHtml=""
+                     for(var i=0;i<result.length;i++){
+                        scrollHtml+="<button onclick='fun(this)' name='"+result[i].chatlist +"' ><table><tr><td><img style='height: 70px;width:70px;border-radius:50%' src='man-profile-cartoon-vector-19491811.jpg'/></td><td><h3> <p >"+result[i].name+"</p></h3></td></tr> </table></button><br>"
+                    }
+                    document.getElementById("scroll").innerHTML=scrollHtml  
+                                   
+                        })
+                        .catch(error => console.log('error', error));
+                }
+            
+        }
+        function fun(a){
+            currentTo=a.name
+            document.getElementById("toname").innerHTML=a.childNodes[0].childNodes[0].childNodes[0].childNodes[1].innerText
+            console.log(a.childNodes[0].childNodes[0].childNodes[0].childNodes[1].innerText)
+            document.getElementById("chat").scrollTo(0, document.getElementById("chat").scrollHeight);
+            console.log(a.name)
+            updatechat(1)
+        }
+        
+        function updatechat(x){
+              if(currentTo!=null){
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                "from": from,
+                "to":currentTo
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                mode:'cors',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("http://localhost:8081/getmessages", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result) 
+                    var chatresult =""
+                    for(var i=0;i<result.length;i++){
+                        if(result[i].from==from){
+                            console.log(result[i].from+"  "+from)
+                            chatresult+="<div class='abc'><p id='from'>"+result[i].message+"</p></div>"
+                        }
+                        else{
+                            chatresult+="<div class='ab'><p id='from'>"+result[i].message+"</p></div>"
+                        }
+                    }
+                    document.getElementById("chat").innerHTML=chatresult
+                    if(x==1)
+                    document.getElementById("chat").scrollTo(0, document.getElementById("chat").scrollHeight);
+                    
+
+                 })
+                        .catch(error => console.log('error', error));
+              }
+            
+        }
+        
+
+
+
+     </script>
+    </body>
+</html> 

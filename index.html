@@ -1,0 +1,61 @@
+<html>
+    <body style="margin-left: 90px;margin-top:40px">
+        <h1>login page</h1>
+        <!-- <form action="http://localhost:8081" method="POST"> -->
+            <table>
+                <tr>
+                    <td><label>email: </label></td>
+                    <td> <input id="name" name="name"><br><br></td>
+                </tr>
+                <tr>
+                    <td><label>password :</label></td>
+                    <td><input id="password" name="password"><br><br></td>
+                    <tr>
+                        <td><button onclick="fun()">submit</button></td>
+                        <td><a href="signup.html">signup</a></td>
+                    </tr>
+                </tr>
+
+            </table>
+            <h1 style="display: none;" id="success">login success</h1>
+        <!-- </form> -->
+        
+        <script>
+            function fun(){
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                "email": document.getElementById("name").value,
+                "password": document.getElementById("password").value,
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                mode:'cors',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("http://localhost:8081/login", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                    if(result[0].status=="success"){
+                        console.log("jaxj")
+                        document.cookie = "data="+result[0].result[0].name+" "+result[0].result[0].id;
+                        window.location.href = "landing.html";
+                        document.getElementById("success").innerHTML='login success'
+                        document.getElementById("success").style="display:block"
+                    }else{
+                        document.getElementById("success").innerHTML='failed or invalid request'
+                        document.getElementById("success").style="display:block"
+                    }
+                })
+                .catch(error => console.log('error', error));
+}
+                
+        </script>
+    </body>
+</html>
