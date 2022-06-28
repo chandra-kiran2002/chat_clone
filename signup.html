@@ -52,7 +52,7 @@
                     redirect: 'follow'
                     };
                     console.log(raw)
-                    fetch("http://localhost:8081/signup", requestOptions)
+                    fetch("https://chat-clone1.herokuapp.com/signup", requestOptions)
                     .then(response => response.text())
                     .then(result => {
                         console.log(result)
@@ -88,7 +88,7 @@
                     redirect: 'follow'
                     };
                     console.log(raw)
-                    fetch("http://localhost:8081/checkotp", requestOptions)
+                    fetch("https://chat-clone1.herokuapp.com/checkotp", requestOptions)
                     .then(response => response.text())
                     .then(result => {
                         console.log(result)

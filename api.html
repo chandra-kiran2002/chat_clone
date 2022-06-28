@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>dfd</title>
+    </head>
+<body>
+
+<div id="demo">
+  <h2>Let AJAX change this text</h2>
+  <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+<script>
+
+//     function loadDoc() {
+//       var myHeaders = new Headers();
+// myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "clientId": "87b0fad34adb11439828ebee77619455",
+  "clientSecret": "4cc3a4a84a32c08ee45f03478ed17809718314cad99194ed7d514c92bb5da8fa"
+});
+
+// var requestOptions = {
+//   mode:"cors",
+//   method: 'POST',
+//   headers: myHeaders,
+//   body: raw,
+//   redirect: 'follow'
+// };
+
+// fetch("https://api.jdoodle.com/v1/credit-spent", requestOptions)
+//   .then(response => response.text())
+//   .then(result => console.log(result))
+//   .catch(error => console.log('error', error));
+//   }
+function loadDoc() {
+const request = new XMLHttpRequest()
+request.open("GET","https://api.jdoodle.com/v1/credit-spent")
+request.send(raw)
+request.onload= ()=> {
+  if(request.status===200){
+    console.log(JSON.parse(request.response))
+  }
+  else{
+    console.log(`error ${request.status}`)
+  }
+}
+}
+</script>
+</body
+</html>

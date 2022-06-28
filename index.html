@@ -38,7 +38,7 @@
                 redirect: 'follow'
                 };
 
-                fetch("http://localhost:8081/login", requestOptions)
+                fetch("https://chat-clone1.herokuapp.com/login", requestOptions)
                 .then(response => response.json())
                 .then(result => {
                     console.log(result)
