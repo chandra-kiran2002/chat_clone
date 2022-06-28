@@ -204,7 +204,7 @@
                 redirect: 'follow'
                 };
 
-                fetch("http://localhost:8081/uploadmessage", requestOptions)
+                fetch("https://chat-clone1.herokuapp.com//uploadmessage", requestOptions)
                 .then(response => response.text())
                 .then(result => {
                     console.log(result)
@@ -232,7 +232,7 @@
                 redirect: 'follow'
                 };
 
-                fetch("http://localhost:8081/getprofiles", requestOptions)
+                fetch("https://chat-clone1.herokuapp.com//getprofiles", requestOptions)
                 .then(response => response.json())
                 .then(result => {
                     console.log(result)   
@@ -274,7 +274,7 @@
                 redirect: 'follow'
                 };
 
-                fetch("http://localhost:8081/getmessages", requestOptions)
+                fetch("https://chat-clone1.herokuapp.com//getmessages", requestOptions)
                 .then(response => response.json())
                 .then(result => {
                     console.log(result) 
