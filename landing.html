@@ -328,8 +328,8 @@
                 .then(result => {
                     console.log(result) 
                     if(result.length==1){
-                    currentTo=result.id
-                    document.getElementById("toname").innerHTML=result.name
+                    currentTo=result[0].id
+                    document.getElementById("toname").innerHTML=result[0].name
                     }
                     else{
                         alert("user not found")
