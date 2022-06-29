@@ -51,7 +51,7 @@
         }
         #scroll button:focus {outline:0;}
         #scroll {
-            height: 87vh;
+            height: 80vh;
         overflow: scroll;
        
         }
@@ -98,6 +98,13 @@
                             <td> <h2><strong id="username">hi kiran</strong></h2></td>
                         </tr>
                     </table>
+                    <table style="width: 100%;margin: 3px;">
+                        <tr>
+                            <td><input id="searchuser" style="height:4vh;margin-right:4px;width: 99%;" type="text"></td>
+                            <td >  <button onclick="searchuser()" style="height:4vh;padding: 3px;" class="btn btn-primary" >search</button></td>
+                        </tr>
+                    </table>
+                      
                     <!-- <h2><strong>Chats</strong></h2> -->
                     <div id="scroll">
                                                
@@ -297,6 +304,41 @@
                         .catch(error => console.log('error', error));
               }
             
+        }
+        function searchuser(){
+            var input=document.getElementById("searchuser").value
+            if(input!=null){
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                "user": input
+                });
+
+                var requestOptions = {
+                method: 'POST',
+                mode:'cors',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+                };
+
+                fetch("https://chat-clone1.herokuapp.com/msgtonew", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result) 
+                    if(result.length==1){
+                    currentTo=result.id
+                    document.getElementById("toname").innerHTML=result.name
+                    }
+                    else{
+                        alert("user not found")
+                    }
+
+                 })
+                        .catch(error => console.log('error', error));
+              
+            }
         }
         
 
