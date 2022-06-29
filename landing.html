@@ -330,6 +330,8 @@
                     if(result.length==1){
                     currentTo=result[0].id
                     document.getElementById("toname").innerHTML=result[0].name
+                    document.getElementById("searchuser").value=""
+                    aler("user found")
                     }
                     else{
                         alert("user not found")
